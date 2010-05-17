@@ -45,14 +45,20 @@ module Provider::Vasttrafik
     lines = []
     xml_tree.css("forecast item").each do |element|
       attributes = {}
-      attributes[:line_number]       = element.attribute("line_number").try(:text).to_s
-      attributes[:color]             = element.attribute("line_number_foreground_color").try(:text).to_s
-      attributes[:background_color]  = element.attribute("line_number_background_color").try(:text).to_s
-      attributes[:destination]       = element.css("destination").try(:text).to_s
-      attributes[:next_trip]         = element.attribute("next_trip").try(:text).to_s
-      attributes[:next_quality]      = element.attribute("next_quality").try(:text).to_i
-      attributes[:next_next_trip]    = element.attribute("next_next_trip").try(:text).to_s
-      attributes[:next_next_quality] = element.attribute("next_next_quality").try(:text).to_i
+      attributes[:line_number]          = element.attribute("line_number").try(:text).to_s
+      attributes[:color]                = element.attribute("line_number_foreground_color").try(:text).to_s
+      attributes[:background_color]     = element.attribute("line_number_background_color").try(:text).to_s
+      attributes[:destination]          = element.css("destination").try(:text).to_s
+      
+      attributes[:next_trip]            = element.attribute("next_trip").try(:text).to_s
+      alternate_text = element.attribute("next_trip_alternate_text").try(:text).to_s
+      attributes[:next_handicap]        = (alternate_text == "Handikappanpassad".force_encoding("UTF-8")) 
+      attributes[:next_low_floor]       = (alternate_text == "Low Floor")
+      
+      attributes[:next_next_trip]       = element.attribute("next_next_trip").try(:text).to_s
+      alternate_text = element.attribute("next_next_trip_alternate_text").try(:text).to_s
+      attributes[:next_next_handicap]   = (alternate_text == "Handikappanpassad")
+      attributes[:next_next_low_floor]  = (alternate_text == "Low Floor")
 
       lines << [attributes[:line_number], attributes]
     end

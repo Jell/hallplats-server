@@ -19,8 +19,8 @@ def get_stops(lat,lng)
 end
 
 def get_nearest_stops(lat,lng)
-  lat = Float lat
-  lng = Float lng
+  lat = Float lat[0..10]
+  lng = Float lng[0..10]
   area = 0.002
   list = BusStop.where(["lat > ? AND lat < ? AND lng > ? AND lng < ?", lat - area, lat + area, lng- area, lng + area])
   while list.count < 10 do

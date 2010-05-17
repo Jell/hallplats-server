@@ -51,9 +51,12 @@ module Provider::StorstockholmsLokaltrafik
             attributes[:background_color]  = "#BB0000"
             attributes[:destination]       = departure.css('span[@class="DestinationName"]').text.squeeze(" ").strip
             attributes[:next_trip]         = next_trip.scan(/\d+/).first
-            attributes[:next_quality]      = ""
-            attributes[:next_next_trip]    = ""
-            attributes[:next_next_quality] = ""
+            attributes[:next_handicap]        = false
+            attributes[:next_low_floor]       = false
+            attributes[:next_next_trip]       = ""
+            attributes[:next_next_handicap]        = false
+            attributes[:next_next_low_floor]       = false
+
             lines << [attributes[:line_number], attributes]
           end
         end
@@ -103,9 +106,11 @@ module Provider::StorstockholmsLokaltrafik
         attributes[:background_color]  = colors[line_number]
         attributes[:destination]       = destination
         attributes[:next_trip]         = next_trip
-        attributes[:next_quality]      = ""
+        attributes[:next_handicap]        = false
+        attributes[:next_low_floor]       = false
         attributes[:next_next_trip]    = ""
-        attributes[:next_next_quality] = ""
+        attributes[:next_next_handicap]        = false
+        attributes[:next_next_low_floor]       = false
         lines << [attributes[:line_number], attributes]
       end
     end
@@ -122,7 +127,7 @@ module Provider::StorstockholmsLokaltrafik
       departure_list  =  pendeltag_forecast.css('div[@class="Departure TrainRow"]') +
                           pendeltag_forecast.css('div[@class="DepartureAlternating TrainRow"]')
       departure_list.each do |departure|
-        striped_name = departure.css('span[@class="TrainCell Col2"]').text.scan(/\w+/)
+        striped_name = departure.css('span[@class="TrainCell Col2"]').text.scan(/[a-zA-ZöäåÖÄÅ\s]+/)
         destination = striped_name[0]
         for i in 1..striped_name.count - 2
           destination += " " + striped_name[i]
@@ -148,9 +153,11 @@ module Provider::StorstockholmsLokaltrafik
         attributes[:background_color]  = "#000000"
         attributes[:destination]       = destination
         attributes[:next_trip]         = next_trip
-        attributes[:next_quality]      = ""
+        attributes[:next_handicap]        = false
+        attributes[:next_low_floor]       = false
         attributes[:next_next_trip]    = ""
-        attributes[:next_next_quality] = ""
+        attributes[:next_next_handicap]        = false
+        attributes[:next_next_low_floor]       = false
         lines << [attributes[:line_number], attributes]
       end
       

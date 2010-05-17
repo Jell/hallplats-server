@@ -3,11 +3,12 @@
 
 start() ->
 	inets:start(),
+	cache_server:start(),
 	spawn(fun() -> start_driver() end).
 
 start_driver() ->
 	io:format("New Port opened from ~p~n", [self()]),
-	Cmd = "rails runner /Users/jeanlouis/Documents/ErlangPlayground/lib/echo.rb",
+	Cmd = "rails runner ./lib/echo.rb",
 	Port = open_port({spawn, Cmd}, [{packet, 4}, nouse_stdio, exit_status, binary]),
 	register(ruby_port, Port),
 	DriverPid = spawn(fun() -> ruby_driver(Port) end),
@@ -83,17 +84,6 @@ wait_for_forecasts(ForecastList) ->
 fetch_forecast(Stop, ToPid) ->
 	StopBundle = tuple_to_list(Stop),
 	[URL] = [binary_to_list(Value) || {Atom, Value} <- StopBundle, Atom == url],
-	%io:format("~p~n", [URL]),
-	%{ ok, {{_Version, 200, _Status}, _Header, Body}} = http:request(URL),
-	%{ ok, {_Status, _Header, Body}} = http:request(URL),
-	%ToPid!{ok, {StopBundle, Body}}.
-	{ok, RequestId} = http:request(get, {URL, []}, [], [{sync, false}]),
-	receive
-		{http, {RequestId, Result}} ->
-			{_Status, _Header, Body} = Result,
-			ToPid!{ok, {StopBundle, Body}}
-	after
-		3000 ->
-			fetch_forecast(Stop, ToPid)
-	end.
+	Body = cache_server:get(URL),
+	ToPid!{ok, {StopBundle, Body}}.
 	
