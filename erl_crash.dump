@@ -1,32 +1,32 @@
 =erl_crash_dump:0.1
-Tue Apr 20 16:20:16 2010
+Tue May 18 11:29:25 2010
 Slogan: Kernel pid terminated (application_controller) ({application_start_failure,yaws,{shutdown,{yaws_app,start,[normal,[]]}}})
 System version: Erlang R13B04 (erts-5.7.5) [source] [smp:2:2] [rq:2] [async-threads:0] [hipe] [kernel-poll:true]
 Compiled: Thu Apr  8 13:12:51 2010
 Taints: 
-Atoms: 7332
+Atoms: 7335
 =memory
-total: 3834360
-processes: 330216
-processes_used: 302872
-system: 3504144
+total: 3742880
+processes: 238704
+processes_used: 211360
+system: 3504176
 atom: 328073
-atom_used: 310702
+atom_used: 310782
 binary: 19376
-code: 2295591
+code: 2295308
 ets: 31404
 =hash_table:atom_tab
 size: 4813
 used: 3721
-objs: 7332
+objs: 7335
 depth: 7
 =index_table:atom_tab
 size: 8192
 limit: 1048576
-entries: 7332
+entries: 7335
 =hash_table:module_code
 size: 97
-used: 64
+used: 65
 objs: 92
 depth: 4
 =index_table:module_code
@@ -35,13 +35,13 @@ limit: 65536
 entries: 92
 =hash_table:export_list
 size: 3203
-used: 1955
-objs: 2998
+used: 1953
+objs: 3000
 depth: 5
 =index_table:export_list
 size: 3072
 limit: 524288
-entries: 2998
+entries: 3000
 =hash_table:secondary_export_table
 size: 97
 used: 0
@@ -54,7 +54,7 @@ objs: 3
 depth: 1
 =hash_table:fun_table
 size: 397
-used: 306
+used: 304
 objs: 611
 depth: 7
 =hash_table:node_table
@@ -70,22 +70,22 @@ depth: 1
 =allocated_areas
 sys_misc: 23438
 static: 499712
-atom_space: 98316 81137
+atom_space: 98316 81145
 atom_table: 52101
 module_table: 4568
 export_table: 25184
 register_table: 108
 fun_table: 1650
 module_refs: 1024
-loaded_code: 2079801
+loaded_code: 2079422
 dist_table: 403
 node_table: 131
 bits_bufs_size: 0
 bif_timer: 40028
 link_lh: 0
 proc: 24520 2080
-atom_entry: 177656 177464
-export_entry: 144628 144532
+atom_entry: 177656 177536
+export_entry: 144628 144628
 module_entry: 4848 4464
 reg_proc: 996 108
 monitor_sh: 832 32
@@ -173,9 +173,9 @@ sbcs sys_alloc carriers: 0
 sbcs carriers size: 0 0 0
 sbcs mseg carriers size: 0
 sbcs sys_alloc carriers size: 0
-temp_alloc calls: 9005
-temp_free calls: 9005
-temp_realloc calls: 39
+temp_alloc calls: 8371
+temp_free calls: 8371
+temp_realloc calls: 7
 mseg_alloc calls: 0
 mseg_dealloc calls: 0
 mseg_realloc calls: 0
@@ -199,8 +199,8 @@ option lmbcs: 10485760
 option smbcs: 1048576
 option mbcgs: 10
 option as: af
-mbcs blocks: 0 256 256
-mbcs blocks size: 0 29760 29760
+mbcs blocks: 0 151 151
+mbcs blocks size: 0 26784 26784
 mbcs carriers: 1 1 1
 mbcs mseg carriers: 0
 mbcs sys_alloc carriers: 1
@@ -215,9 +215,9 @@ sbcs sys_alloc carriers: 0
 sbcs carriers size: 0 0 0
 sbcs mseg carriers size: 0
 sbcs sys_alloc carriers size: 0
-temp_alloc calls: 8636
-temp_free calls: 8636
-temp_realloc calls: 13
+temp_alloc calls: 9292
+temp_free calls: 9292
+temp_realloc calls: 44
 mseg_alloc calls: 0
 mseg_dealloc calls: 0
 mseg_realloc calls: 0
@@ -258,8 +258,8 @@ sbcs sys_alloc carriers: 0
 sbcs carriers size: 0 0 0
 sbcs mseg carriers size: 0
 sbcs sys_alloc carriers size: 0
-sl_alloc calls: 567
-sl_free calls: 567
+sl_alloc calls: 546
+sl_free calls: 546
 sl_realloc calls: 0
 mseg_alloc calls: 0
 mseg_dealloc calls: 0
@@ -285,8 +285,8 @@ option smbcs: 524288
 option mbcgs: 10
 option mbsd: 3
 option as: gf
-mbcs blocks: 0 7 7
-mbcs blocks size: 0 544 544
+mbcs blocks: 0 1 1
+mbcs blocks size: 0 48 48
 mbcs carriers: 1 1 1
 mbcs mseg carriers: 0
 mbcs sys_alloc carriers: 1
@@ -301,8 +301,8 @@ sbcs sys_alloc carriers: 0
 sbcs carriers size: 0 0 0
 sbcs mseg carriers size: 0
 sbcs sys_alloc carriers size: 0
-sl_alloc calls: 708
-sl_free calls: 708
+sl_alloc calls: 644
+sl_free calls: 644
 sl_realloc calls: 0
 mseg_alloc calls: 0
 mseg_dealloc calls: 0
@@ -327,8 +327,8 @@ option lmbcs: 5242880
 option smbcs: 524288
 option mbcgs: 10
 option as: bf
-mbcs blocks: 512 523 523
-mbcs blocks size: 17440 28064 28064
+mbcs blocks: 282 292 292
+mbcs blocks size: 10616 20792 20792
 mbcs carriers: 1 1 1
 mbcs mseg carriers: 0
 mbcs sys_alloc carriers: 1
@@ -343,8 +343,8 @@ sbcs sys_alloc carriers: 0
 sbcs carriers size: 0 0 0
 sbcs mseg carriers size: 0
 sbcs sys_alloc carriers size: 0
-std_alloc calls: 1095
-std_free calls: 583
+std_alloc calls: 612
+std_free calls: 330
 std_realloc calls: 0
 mseg_alloc calls: 0
 mseg_dealloc calls: 0
@@ -369,8 +369,8 @@ option lmbcs: 5242880
 option smbcs: 524288
 option mbcgs: 10
 option as: bf
-mbcs blocks: 494 513 513
-mbcs blocks size: 19408 30112 30112
+mbcs blocks: 736 773 773
+mbcs blocks size: 26640 38712 38712
 mbcs carriers: 1 1 1
 mbcs mseg carriers: 0
 mbcs sys_alloc carriers: 1
@@ -385,8 +385,8 @@ sbcs sys_alloc carriers: 0
 sbcs carriers size: 0 0 0
 sbcs mseg carriers size: 0
 sbcs sys_alloc carriers size: 0
-std_alloc calls: 1040
-std_free calls: 546
+std_alloc calls: 1533
+std_free calls: 797
 std_realloc calls: 0
 mseg_alloc calls: 0
 mseg_dealloc calls: 0
@@ -412,7 +412,7 @@ option smbcs: 1048576
 option mbcgs: 10
 option as: aobf
 mbcs blocks: 729 729 729
-mbcs blocks size: 3642392 3642392 3642392
+mbcs blocks size: 3642016 3642016 3642016
 mbcs carriers: 3 3 3
 mbcs mseg carriers: 0
 mbcs sys_alloc carriers: 3
@@ -454,8 +454,8 @@ option smbcs: 524288
 option mbcgs: 10
 option mbsd: 3
 option as: gf
-mbcs blocks: 5 179 179
-mbcs blocks size: 110160 701080 701080
+mbcs blocks: 5 81 81
+mbcs blocks size: 18648 236272 236272
 mbcs carriers: 1 2 2
 mbcs mseg carriers: 0
 mbcs sys_alloc carriers: 1
@@ -470,11 +470,11 @@ sbcs sys_alloc carriers: 0
 sbcs carriers size: 0 0 0
 sbcs mseg carriers size: 0
 sbcs sys_alloc carriers size: 0
-eheap_alloc calls: 979
-eheap_free calls: 974
-eheap_realloc calls: 29
-mseg_alloc calls: 5
-mseg_dealloc calls: 5
+eheap_alloc calls: 513
+eheap_free calls: 508
+eheap_realloc calls: 33
+mseg_alloc calls: 1
+mseg_dealloc calls: 1
 mseg_realloc calls: 0
 sys_alloc calls: 1
 sys_free calls: 0
@@ -497,12 +497,12 @@ option smbcs: 524288
 option mbcgs: 10
 option mbsd: 3
 option as: gf
-mbcs blocks: 3 79 79
-mbcs blocks size: 19192 240448 240448
-mbcs carriers: 1 2 2
+mbcs blocks: 3 234 234
+mbcs blocks size: 19192 637432 637432
+mbcs carriers: 1 3 3
 mbcs mseg carriers: 0
 mbcs sys_alloc carriers: 1
-mbcs carriers size: 262168 786456 786456
+mbcs carriers size: 262168 1785880 1785880
 mbcs mseg carriers size: 0
 mbcs sys_alloc carriers size: 262168
 sbcs blocks: 0 0 0
@@ -513,11 +513,11 @@ sbcs sys_alloc carriers: 0
 sbcs carriers size: 0 0 0
 sbcs mseg carriers size: 0
 sbcs sys_alloc carriers size: 0
-eheap_alloc calls: 899
-eheap_free calls: 896
-eheap_realloc calls: 60
-mseg_alloc calls: 5
-mseg_dealloc calls: 5
+eheap_alloc calls: 1666
+eheap_free calls: 1663
+eheap_realloc calls: 63
+mseg_alloc calls: 4
+mseg_dealloc calls: 4
 mseg_realloc calls: 0
 sys_alloc calls: 1
 sys_free calls: 0
@@ -539,8 +539,8 @@ option lmbcs: 5242880
 option smbcs: 524288
 option mbcgs: 10
 option as: bf
-mbcs blocks: 0 49 49
-mbcs blocks size: 0 20976 20976
+mbcs blocks: 0 43 43
+mbcs blocks size: 0 19072 19072
 mbcs carriers: 1 1 1
 mbcs mseg carriers: 0
 mbcs sys_alloc carriers: 1
@@ -555,8 +555,8 @@ sbcs sys_alloc carriers: 0
 sbcs carriers size: 0 0 0
 sbcs mseg carriers size: 0
 sbcs sys_alloc carriers size: 0
-ets_alloc calls: 53
-ets_free calls: 53
+ets_alloc calls: 46
+ets_free calls: 46
 ets_realloc calls: 0
 mseg_alloc calls: 0
 mseg_dealloc calls: 0
@@ -581,8 +581,8 @@ option lmbcs: 5242880
 option smbcs: 524288
 option mbcgs: 10
 option as: bf
-mbcs blocks: 4 363 363
-mbcs blocks size: 6208 91688 91688
+mbcs blocks: 4 370 370
+mbcs blocks size: 6208 94616 94616
 mbcs carriers: 1 2 2
 mbcs mseg carriers: 0
 mbcs sys_alloc carriers: 1
@@ -597,8 +597,8 @@ sbcs sys_alloc carriers: 0
 sbcs carriers size: 0 0 0
 sbcs mseg carriers size: 0
 sbcs sys_alloc carriers size: 0
-ets_alloc calls: 365
-ets_free calls: 361
+ets_alloc calls: 373
+ets_free calls: 369
 ets_realloc calls: 4
 mseg_alloc calls: 1
 mseg_dealloc calls: 1
@@ -609,8 +609,8 @@ sys_realloc calls: 0
 =allocator:fix_alloc
 option e: true
 proc: 24520 2080
-atom_entry: 177656 177464
-export_entry: 144628 144532
+atom_entry: 177656 177536
+export_entry: 144628 144628
 module_entry: 4848 4464
 reg_proc: 996 108
 monitor_sh: 832 32
@@ -636,12 +636,12 @@ option lmbcs: 5242880
 option smbcs: 524288
 option mbcgs: 10
 option as: bf
-mbcs blocks: 1 11 11
-mbcs blocks size: 19376 439160 439160
-mbcs carriers: 1 2 2
+mbcs blocks: 1 14 14
+mbcs blocks size: 19376 447088 447088
+mbcs carriers: 1 3 3
 mbcs mseg carriers: 0
 mbcs sys_alloc carriers: 1
-mbcs carriers size: 65560 589848 589848
+mbcs carriers size: 65560 1589272 1589272
 mbcs mseg carriers size: 0
 mbcs sys_alloc carriers size: 65560
 sbcs blocks: 0 0 0
@@ -652,9 +652,9 @@ sbcs sys_alloc carriers: 0
 sbcs carriers size: 0 0 0
 sbcs mseg carriers size: 0
 sbcs sys_alloc carriers size: 0
-binary_alloc calls: 655
-binary_free calls: 654
-binary_realloc calls: 4
+binary_alloc calls: 714
+binary_free calls: 713
+binary_realloc calls: 6
 mseg_alloc calls: 5
 mseg_dealloc calls: 5
 mseg_realloc calls: 0
@@ -678,8 +678,8 @@ option lmbcs: 5242880
 option smbcs: 524288
 option mbcgs: 10
 option as: bf
-mbcs blocks: 0 18 18
-mbcs blocks size: 0 547112 547112
+mbcs blocks: 0 10 10
+mbcs blocks size: 0 546984 546984
 mbcs carriers: 1 3 3
 mbcs mseg carriers: 0
 mbcs sys_alloc carriers: 1
@@ -694,8 +694,8 @@ sbcs sys_alloc carriers: 0
 sbcs carriers size: 0 0 0
 sbcs mseg carriers size: 0
 sbcs sys_alloc carriers size: 0
-binary_alloc calls: 869
-binary_free calls: 869
+binary_alloc calls: 796
+binary_free calls: 796
 binary_realloc calls: 0
 mseg_alloc calls: 5
 mseg_dealloc calls: 5
@@ -720,8 +720,8 @@ option lmbcs: 5242880
 option smbcs: 524288
 option mbcgs: 10
 option as: bf
-mbcs blocks: 0 41 41
-mbcs blocks size: 0 12272 12272
+mbcs blocks: 1 10 10
+mbcs blocks size: 40 6560 6560
 mbcs carriers: 1 1 1
 mbcs mseg carriers: 0
 mbcs sys_alloc carriers: 1
@@ -736,8 +736,8 @@ sbcs sys_alloc carriers: 0
 sbcs carriers size: 0 0 0
 sbcs mseg carriers size: 0
 sbcs sys_alloc carriers size: 0
-driver_alloc calls: 1179
-driver_free calls: 1179
+driver_alloc calls: 780
+driver_free calls: 779
 driver_realloc calls: 0
 mseg_alloc calls: 0
 mseg_dealloc calls: 0
@@ -762,8 +762,8 @@ option lmbcs: 5242880
 option smbcs: 524288
 option mbcgs: 10
 option as: bf
-mbcs blocks: 3 12 12
-mbcs blocks size: 184 1976 1976
+mbcs blocks: 2 43 43
+mbcs blocks size: 144 7728 7728
 mbcs carriers: 1 1 1
 mbcs mseg carriers: 0
 mbcs sys_alloc carriers: 1
@@ -778,8 +778,8 @@ sbcs sys_alloc carriers: 0
 sbcs carriers size: 0 0 0
 sbcs mseg carriers size: 0
 sbcs sys_alloc carriers size: 0
-driver_alloc calls: 1333
-driver_free calls: 1330
+driver_alloc calls: 1717
+driver_free calls: 1715
 driver_realloc calls: 0
 mseg_alloc calls: 0
 mseg_dealloc calls: 0
@@ -793,18 +793,18 @@ option amcbf: 4194304
 option rmcbf: 20
 option mcs: 5
 option cci: 1000
-cached_segments: 4
-cache_hits: 16
+cached_segments: 3
+cache_hits: 11
 segments: 0 5 5
 segments_size: 0 3096576 3096576
-segments_watermark: 4
-mseg_alloc calls: 21
-mseg_dealloc calls: 21
+segments_watermark: 3
+mseg_alloc calls: 16
+mseg_dealloc calls: 16
 mseg_realloc calls: 0
 mseg_create calls: 5
-mseg_destroy calls: 1
+mseg_destroy calls: 2
 mseg_clear_cache calls: 0
-mseg_check_cache calls: 1
+mseg_check_cache calls: 2
 =allocator:alloc_util
 option mmc: 1024
 option ycs: 1048576
@@ -817,7 +817,7 @@ State: Running
 Name: init
 Spawned as: otp_ring0:start/2
 Spawned by: []
-Started: Tue Apr 20 16:20:14 2010
+Started: Tue May 18 11:29:22 2010
 Message queue length: 0
 Number of heap fragments: 0
 Heap fragment data: 0
@@ -834,16 +834,16 @@ State: Waiting
 Name: erl_prim_loader
 Spawned as: erlang:apply/2
 Spawned by: <0.2.0>
-Started: Tue Apr 20 16:20:14 2010
+Started: Tue May 18 11:29:22 2010
 Message queue length: 0
 Number of heap fragments: 0
 Heap fragment data: 0
 Link list: [<0.0.0>, #Port<0.1>]
-Reductions: 449156
-Stack+heap: 6765
-OldHeap: 17711
-Heap unused: 3397
-OldHeap unused: 17711
+Reductions: 453319
+Stack+heap: 1597
+OldHeap: 1597
+Heap unused: 937
+OldHeap unused: 1597
 Program counter: 0x01161c10 (erl_prim_loader:loop/3 + 92)
 CP: 0x00000000 (invalid)
 arity = 0
@@ -852,15 +852,15 @@ State: Waiting
 Name: error_logger
 Spawned as: proc_lib:init_p/5
 Spawned by: <0.2.0>
-Started: Tue Apr 20 16:20:14 2010
+Started: Tue May 18 11:29:22 2010
 Message queue length: 0
 Number of heap fragments: 0
 Heap fragment data: 0
 Link list: [<0.0.0>]
-Reductions: 4638
-Stack+heap: 2584
+Reductions: 4630
+Stack+heap: 987
 OldHeap: 1597
-Heap unused: 2224
+Heap unused: 624
 OldHeap unused: 1597
 Program counter: 0x0115b0fc (gen_event:fetch_msg/5 + 44)
 CP: 0x00000000 (invalid)
@@ -869,7 +869,7 @@ arity = 0
 State: Waiting
 Spawned as: erlang:apply/2
 Spawned by: <0.36.0>
-Started: Tue Apr 20 16:20:14 2010
+Started: Tue May 18 11:29:23 2010
 Message queue length: 1
 Number of heap fragments: 0
 Heap fragment data: 0
@@ -885,7 +885,7 @@ arity = 0
 State: Waiting
 Spawned as: erlang:apply/2
 Spawned by: <0.36.0>
-Started: Tue Apr 20 16:20:14 2010
+Started: Tue May 18 11:29:23 2010
 Message queue length: 1
 Number of heap fragments: 0
 Heap fragment data: 0
@@ -905,7 +905,7 @@ Port controls linked-in driver: efile
 =node:'nonode@nohost'
 =no_distribution
 =loaded_modules
-Current code: 2079801
+Current code: 2079422
 Old code: 0
 =mod:otp_ring0
 Current size: 624
@@ -1251,10 +1251,10 @@ Current compilation info: 836C0000000468026400076F7074696F6E736C0000000468026400
 Current size: 3946
 Current attributes: 836C00000002680264000376736E6C000000016E1000C4B205BB5C88AB4EF2A9FE0B487C36076A68026400096265686176696F75726C0000000164000A67656E5F7365727665726A6A
 Current compilation info: 836C0000000468026400076F7074696F6E736C000000066802640006696E6C696E656C00000001680264000A706F72745F6E616D657361006A68026400036377646B005E2F6E65742F6973696C6475722F6C6469736B2F6461696C795F6275696C642F6F74705F7072656275696C645F7231336230342E323031302D30322D32325F32302F6F74705F7372635F5231334230342F6C69622F63727970746F2F73726368026400066F75746469726B00662F6E65742F6973696C6475722F6C6469736B2F6461696C795F6275696C642F6F74705F7072656275696C645F7231336230342E323031302D30322D32325F32302F6F74705F7372635F5231334230342F6C69622F63727970746F2F7372632F2E2E2F6562696E6400137761726E5F6F62736F6C6574655F677561726464000A64656275675F696E666F6802640006696E6C696E656C00000001680264000A706F72745F6E616D657361006A6A680264000776657273696F6E6B0005342E362E35680264000474696D65680662000007DA6102611661136129613B6802640006736F757263656B00702F6E65742F6973696C6475722F6C6469736B2F6461696C795F6275696C642F6F74705F7072656275696C645F7231336230342E323031302D30322D32325F32302F6F74705F7372635F5231334230342F6C69622F63727970746F2F7372632F63727970746F5F7365727665722E65726C6A
-=mod:echo
-Current size: 3633
-Current attributes: 836C00000001680264000376736E6C000000016E1000BF2D3CA06DBBFA63FE9FDE98337D760D6A6A
-Current compilation info: 836C0000000468026400076F7074696F6E736A680264000776657273696F6E6B0005342E362E35680264000474696D65680662000007DA61046114610D612361076802640006736F757263656B00412F55736572732F6A65616E6C6F7569732F446F63756D656E74732F45726C616E67506C617967726F756E642F76656E646F722F6265616D732F6563686F2E65726C6A
+=mod:hallplats
+Current size: 3254
+Current attributes: 836C00000001680264000376736E6C000000016E1000576BBD339300AB203A16CC4C5E832FA56A6A
+Current compilation info: 836C0000000468026400076F7074696F6E736A680264000776657273696F6E6B0005342E362E35680264000474696D65680662000007DA61056111610E611A61256802640006736F757263656B00462F55736572732F6A65616E6C6F7569732F446F63756D656E74732F45726C616E67506C617967726F756E642F76656E646F722F6265616D732F68616C6C706C6174732E65726C6A
 =mod:inets
 Current size: 20607
 Current attributes: 836C00000002680264000376736E6C000000016E1000FAD9D7FCC9FA073179D85BDB0A6F034A6A68026400076170705F76736E6B0009696E6574732D352E336A
@@ -1286,13 +1286,6 @@ Uniq: 105910772
 Index: 18
 Address: 0x014367c0
 Native_address: 0x00522f80
-Refc: 1
-=fun
-Module: inets
-Uniq: 3519303
-Index: 2
-Address: 0x017bbf70
-Native_address: 0x00522fa0
 Refc: 1
 =fun
 Module: sets
@@ -1327,6 +1320,13 @@ Module: erl_eval
 Uniq: 84646639
 Index: 26
 Address: 0x01436420
+Native_address: 0x00522fa0
+Refc: 1
+=fun
+Module: inets
+Uniq: 3519303
+Index: 2
+Address: 0x017bbf70
 Native_address: 0x00522fa0
 Refc: 1
 =fun
@@ -1617,13 +1617,6 @@ Address: 0x01789d00
 Native_address: 0x00522f90
 Refc: 1
 =fun
-Module: echo
-Uniq: 44749247
-Index: 0
-Address: 0x014b7484
-Native_address: 0x00522fb0
-Refc: 1
-=fun
 Module: erl_scan
 Uniq: 112586428
 Index: 19
@@ -1785,6 +1778,13 @@ Address: 0x01422a30
 Native_address: 0x00522fa0
 Refc: 1
 =fun
+Module: hallplats
+Uniq: 44749247
+Index: 0
+Address: 0x014b7344
+Native_address: 0x00522fb0
+Refc: 1
+=fun
 Module: shell
 Uniq: 9706422
 Index: 2
@@ -1904,13 +1904,6 @@ Address: 0x011b03d0
 Native_address: 0x00522f80
 Refc: 1
 =fun
-Module: echo
-Uniq: 100113237
-Index: 1
-Address: 0x014b7468
-Native_address: 0x00522fb0
-Refc: 1
-=fun
 Module: unicode
 Uniq: 63031763
 Index: 4
@@ -2002,10 +1995,10 @@ Address: 0x0149d048
 Native_address: 0x00522f90
 Refc: 1
 =fun
-Module: echo
+Module: hallplats
 Uniq: 5477612
 Index: 2
-Address: 0x014b7438
+Address: 0x014b72f8
 Native_address: 0x00522fb0
 Refc: 1
 =fun
@@ -2919,6 +2912,13 @@ Address: 0x01194338
 Native_address: 0x00522fa0
 Refc: 1
 =fun
+Module: hallplats
+Uniq: 11339288
+Index: 3
+Address: 0x014b72c8
+Native_address: 0x00522fb0
+Refc: 1
+=fun
 Module: yaws_server
 Uniq: 116882497
 Index: 41
@@ -3465,6 +3465,13 @@ Address: 0x0146e744
 Native_address: 0x00522f80
 Refc: 1
 =fun
+Module: inets
+Uniq: 85378217
+Index: 3
+Address: 0x017bbf54
+Native_address: 0x00522f90
+Refc: 1
+=fun
 Module: code_server
 Uniq: 133802868
 Index: 4
@@ -3476,13 +3483,6 @@ Module: global_group
 Uniq: 82599869
 Index: 1
 Address: 0x01203c60
-Native_address: 0x00522f90
-Refc: 1
-=fun
-Module: inets
-Uniq: 85378217
-Index: 3
-Address: 0x017bbf54
 Native_address: 0x00522f90
 Refc: 1
 =fun
@@ -3633,18 +3633,18 @@ Address: 0x0116a110
 Native_address: 0x00522fb0
 Refc: 1
 =fun
-Module: inets
-Uniq: 106690228
-Index: 0
-Address: 0x017bc0ec
-Native_address: 0x00522fa0
-Refc: 1
-=fun
 Module: erl_lint
 Uniq: 112111729
 Index: 46
 Address: 0x0178a59c
 Native_address: 0x00522f80
+Refc: 1
+=fun
+Module: inets
+Uniq: 106690228
+Index: 0
+Address: 0x017bc0ec
+Native_address: 0x00522fa0
 Refc: 1
 =fun
 Module: yaws_server
@@ -4457,7 +4457,7 @@ Uniq: 28094883
 Index: 2
 Address: 0x0116a5b0
 Native_address: 0x00522fb0
-Refc: 7
+Refc: 2
 =fun
 Module: global
 Uniq: 14238417
@@ -4536,25 +4536,11 @@ Address: 0x01203b9c
 Native_address: 0x00522fa0
 Refc: 1
 =fun
-Module: inets
-Uniq: 104093984
-Index: 1
-Address: 0x017bc000
-Native_address: 0x00522fa0
-Refc: 1
-=fun
 Module: rpc
 Uniq: 119763261
 Index: 2
 Address: 0x011aba2c
 Native_address: 0x00522fb0
-Refc: 1
-=fun
-Module: inets
-Uniq: 23512997
-Index: 4
-Address: 0x017bbf38
-Native_address: 0x00522f90
 Refc: 1
 =fun
 Module: application_controller
@@ -4585,11 +4571,25 @@ Address: 0x011e1b94
 Native_address: 0x00522f90
 Refc: 1
 =fun
+Module: inets
+Uniq: 104093984
+Index: 1
+Address: 0x017bc000
+Native_address: 0x00522fa0
+Refc: 1
+=fun
 Module: c
 Uniq: 3913792
 Index: 0
 Address: 0x0140aafc
 Native_address: 0x00522fa0
+Refc: 1
+=fun
+Module: inets
+Uniq: 23512997
+Index: 4
+Address: 0x017bbf38
+Native_address: 0x00522f90
 Refc: 1
 =fun
 Module: yaws_server
@@ -4646,6 +4646,13 @@ Uniq: 52541496
 Index: 3
 Address: 0x01203c1c
 Native_address: 0x00522fa0
+Refc: 1
+=fun
+Module: hallplats
+Uniq: 100113237
+Index: 1
+Address: 0x014b7328
+Native_address: 0x00522fb0
 Refc: 1
 =fun
 Module: orddict
@@ -5467,13 +5474,6 @@ Address: 0x0178c6f0
 Native_address: 0x00522fa0
 Refc: 1
 =fun
-Module: echo
-Uniq: 96571293
-Index: 3
-Address: 0x014b7408
-Native_address: 0x00522fb0
-Refc: 1
-=fun
 Module: erl_lint
 Uniq: 100546345
 Index: 24
@@ -5537,363 +5537,363 @@ Address: 0x011b072c
 Native_address: 0x00522f80
 Refc: 1
 =proc_stack:<0.0.0>
-0x01229d9c:SReturn addr 0x1131FEC (init:loop/1 + 480)
-0x01229da0:SReturn addr 0x5EB60C (<terminate process normally>)
-y0:H1227550
+0x0125586c:SReturn addr 0x1131FEC (init:loop/1 + 480)
+0x01255870:SReturn addr 0x5EB60C (<terminate process normally>)
+y0:H1253020
 =proc_heap:<0.0.0>
-1227550:tA:A5:state,H1262690,N,H1262698,H12626A0,P<0.2.0>,H1227584,H12626B4,N,N
-12626B4:t2:H12626F8,H1262700
-1262700:lI82|H1262754
-1262754:lI49|H12627BC
-12627BC:lI51|H12627F4
-12627F4:lI66|H1262830
-1262830:lI48|H1262860
-1262860:lI52|N
-12626F8:lI79|H126274C
-126274C:lI84|H12627B4
-12627B4:lI80|H12627EC
-12627EC:lI32|H1262828
-1262828:lI32|H1262858
-1262858:lI65|H1262868
-1262868:lI80|H1262870
-1262870:lI78|H1262878
-1262878:lI32|H1262880
-1262880:lI49|H1262888
-1262888:lI56|H1262890
-1262890:lI49|H1262898
-1262898:lI32|H12628A0
-12628A0:lI48|H12628A8
-12628A8:lI49|N
-1227584:t2:A7:started,A7:started
-12626A0:lH12626E4|H12626F0
-12626E4:t2:A16:application_controller,P<0.6.0>
-12626F0:lH1262738|H1262744
-1262738:t2:AC:error_logger,P<0.5.0>
-1262744:lH12627A8|N
-12627A8:t2:AF:erl_prim_loader,P<0.3.0>
-1262698:lH12626DC|N
-12626DC:lA4:yaws|N
-1262690:lH12626C8|H12626D4
-12626C8:t2:A5:-root,H126271C
-126271C:lH126276C|N
-126276C:Yh15:2F6F70742F6C6F63616C2F6C69622F65726C616E67
-12626D4:lH1262724|H1262730
-1262724:t2:A9:-progname,H126278C
-126278C:lH12627C4|N
-12627C4:Yh3:65726C
-1262730:lH1262794|H12627A0
-1262794:t2:A5:-home,H12627D0
-12627D0:lH12627FC|N
-12627FC:Yh10:2F55736572732F6A65616E6C6F756973
-12627A0:lH12627D8|H12627E4
-12627D8:t2:A3:-pa,H1262814
-1262814:lH1262838|N
-1262838:Yh18:2F6F70742F6C6F63616C2F6C69622F796177732F6562696E
-12627E4:lH126281C|H1262638
-126281C:t2:A5:-yaws,H1262640
-1262640:lH1262680|N
-1262680:Yh5:6465627567
-1262638:lH1262674|N
-1262674:t2:A5:-yaws,H12626C0
-12626C0:lH1262708|H1262714
-1262708:Yh2:6964
-1262714:lH126275C|N
-126275C:Yh7:64656661756C74
+1253020:tA:A5:state,H126BE98,N,H126BEA0,H126BEA8,P<0.2.0>,H1253054,H126BEBC,N,N
+126BEBC:t2:H126BF00,H126BF08
+126BF08:lI82|H126BF5C
+126BF5C:lI49|H126BFC4
+126BFC4:lI51|H126BFFC
+126BFFC:lI66|H126C038
+126C038:lI48|H126C068
+126C068:lI52|N
+126BF00:lI79|H126BF54
+126BF54:lI84|H126BFBC
+126BFBC:lI80|H126BFF4
+126BFF4:lI32|H126C030
+126C030:lI32|H126C060
+126C060:lI65|H126C070
+126C070:lI80|H126C078
+126C078:lI78|H126C080
+126C080:lI32|H126C088
+126C088:lI49|H126C090
+126C090:lI56|H126C098
+126C098:lI49|H126C0A0
+126C0A0:lI32|H126C0A8
+126C0A8:lI48|H126C0B0
+126C0B0:lI49|N
+1253054:t2:A7:started,A7:started
+126BEA8:lH126BEEC|H126BEF8
+126BEEC:t2:A16:application_controller,P<0.6.0>
+126BEF8:lH126BF40|H126BF4C
+126BF40:t2:AC:error_logger,P<0.5.0>
+126BF4C:lH126BFB0|N
+126BFB0:t2:AF:erl_prim_loader,P<0.3.0>
+126BEA0:lH126BEE4|N
+126BEE4:lA4:yaws|N
+126BE98:lH126BED0|H126BEDC
+126BED0:t2:A5:-root,H126BF24
+126BF24:lH126BF74|N
+126BF74:Yh15:2F6F70742F6C6F63616C2F6C69622F65726C616E67
+126BEDC:lH126BF2C|H126BF38
+126BF2C:t2:A9:-progname,H126BF94
+126BF94:lH126BFCC|N
+126BFCC:Yh3:65726C
+126BF38:lH126BF9C|H126BFA8
+126BF9C:t2:A5:-home,H126BFD8
+126BFD8:lH126C004|N
+126C004:Yh10:2F55736572732F6A65616E6C6F756973
+126BFA8:lH126BFE0|H126BFEC
+126BFE0:t2:A3:-pa,H126C01C
+126C01C:lH126C040|N
+126C040:Yh18:2F6F70742F6C6F63616C2F6C69622F796177732F6562696E
+126BFEC:lH126C024|H126BE40
+126C024:t2:A5:-yaws,H126BE48
+126BE48:lH126BE88|N
+126BE88:Yh5:6465627567
+126BE40:lH126BE7C|N
+126BE7C:t2:A5:-yaws,H126BEC8
+126BEC8:lH126BF10|H126BF1C
+126BF10:Yh2:6964
+126BF1C:lH126BF64|N
+126BF64:Yh7:64656661756C74
 =proc_stack:<0.3.0>
-0x01233f3c:SReturn addr 0x5EB60C (<terminate process normally>)
+0x012158fc:SReturn addr 0x5EB60C (<terminate process normally>)
 y0:N
-y1:H1216094
+y1:H125AA84
 y2:P<0.2.0>
-y3:H1230A00
+y3:H1214A30
 y4:A8:infinity
 =proc_heap:<0.3.0>
-1216094:lH121609C|H12160A4
-121609C:lI47|H12160AC
-12160AC:lI111|H12160C4
-12160C4:lI112|H12160DC
-12160DC:lI116|H12160F4
-12160F4:lI47|H121610C
-121610C:lI108|H1216124
-1216124:lI111|H121613C
-121613C:lI99|H1216154
-1216154:lI97|H121616C
-121616C:lI108|H1216184
-1216184:lI47|H121619C
-121619C:lI108|H12161B4
-12161B4:lI105|H12161CC
-12161CC:lI98|H12161E4
-12161E4:lI47|H12161FC
-12161FC:lI121|H1216214
-1216214:lI97|H121622C
-121622C:lI119|H1216244
-1216244:lI115|H121625C
-121625C:lI47|H1216274
-1216274:lI101|H121628C
-121628C:lI98|H12162A4
-12162A4:lI105|H12162BC
-12162BC:lI110|N
-12160A4:lH12160B4|H12160BC
-12160B4:lI47|H12160CC
-12160CC:lI111|H12160E4
-12160E4:lI112|H12160FC
-12160FC:lI116|H1216114
-1216114:lI47|H121612C
-121612C:lI108|H1216144
-1216144:lI111|H121615C
-121615C:lI99|H1216174
-1216174:lI97|H121618C
-121618C:lI108|H12161A4
-12161A4:lI47|H12161BC
-12161BC:lI108|H12161D4
-12161D4:lI105|H12161EC
-12161EC:lI98|H1216204
-1216204:lI47|H121621C
-121621C:lI101|H1216234
-1216234:lI114|H121624C
-121624C:lI108|H1216264
-1216264:lI97|H121627C
-121627C:lI110|H1216294
-1216294:lI103|H12162AC
-12162AC:lI47|H12162C4
-12162C4:lI108|H12162D4
-12162D4:lI105|H12162E4
-12162E4:lI98|H12162F4
-12162F4:lI47|H1216304
-1216304:lI107|H1216314
-1216314:lI101|H1216324
-1216324:lI114|H1216334
-1216334:lI110|H1216344
-1216344:lI101|H1216354
-1216354:lI108|H1216364
-1216364:lI45|H1216374
-1216374:lI50|H1216384
-1216384:lI46|H1216394
-1216394:lI49|H12163A4
-12163A4:lI51|H12163B4
-12163B4:lI46|H12163C4
-12163C4:lI53|H12163D4
-12163D4:lI47|H12163E4
-12163E4:lI101|H12163F4
-12163F4:lI98|H1216404
-1216404:lI105|H1216414
-1216414:lI110|N
-12160BC:lH12160D4|N
-12160D4:lI47|H12160EC
-12160EC:lI111|H1216104
-1216104:lI112|H121611C
-121611C:lI116|H1216134
-1216134:lI47|H121614C
-121614C:lI108|H1216164
-1216164:lI111|H121617C
-121617C:lI99|H1216194
-1216194:lI97|H12161AC
-12161AC:lI108|H12161C4
-12161C4:lI47|H12161DC
-12161DC:lI108|H12161F4
-12161F4:lI105|H121620C
-121620C:lI98|H1216224
-1216224:lI47|H121623C
-121623C:lI101|H1216254
-1216254:lI114|H121626C
-121626C:lI108|H1216284
-1216284:lI97|H121629C
-121629C:lI110|H12162B4
-12162B4:lI103|H12162CC
-12162CC:lI47|H12162DC
-12162DC:lI108|H12162EC
-12162EC:lI105|H12162FC
-12162FC:lI98|H121630C
-121630C:lI47|H121631C
-121631C:lI115|H121632C
-121632C:lI116|H121633C
-121633C:lI100|H121634C
-121634C:lI108|H121635C
-121635C:lI105|H121636C
-121636C:lI98|H121637C
-121637C:lI45|H121638C
-121638C:lI49|H121639C
-121639C:lI46|H12163AC
-12163AC:lI49|H12163BC
-12163BC:lI54|H12163CC
-12163CC:lI46|H12163DC
-12163DC:lI53|H12163EC
-12163EC:lI47|H12163FC
-12163FC:lI101|H121640C
-121640C:lI98|H121641C
-121641C:lI105|H1216424
-1216424:lI110|N
-1230A00:t9:A5:state,A5:efile,N,A4:none,p<0.1>,A8:infinity,A9:undefined,A5:false,H1216080
-1216080:t4:AA:prim_state,A5:false,A9:undefined,A9:undefined
+125AA84:lH125AA98|H125AAA0
+125AA98:lI47|H125AAB0
+125AAB0:lI111|H125AAD0
+125AAD0:lI112|H125AAF0
+125AAF0:lI116|H125AB10
+125AB10:lI47|H125AB30
+125AB30:lI108|H125AB50
+125AB50:lI111|H125AB70
+125AB70:lI99|H125AB90
+125AB90:lI97|H125ABB0
+125ABB0:lI108|H125ABD0
+125ABD0:lI47|H125ABF0
+125ABF0:lI108|H125AC10
+125AC10:lI105|H125AC30
+125AC30:lI98|H125AC50
+125AC50:lI47|H125AC70
+125AC70:lI121|H125AC90
+125AC90:lI97|H125ACB0
+125ACB0:lI119|H125ACD0
+125ACD0:lI115|H125ACF0
+125ACF0:lI47|H125AD10
+125AD10:lI101|H125AD30
+125AD30:lI98|H125AD50
+125AD50:lI105|H125AD70
+125AD70:lI110|N
+125AAA0:lH125AAB8|H125AAC0
+125AAB8:lI47|H125AAD8
+125AAD8:lI111|H125AAF8
+125AAF8:lI112|H125AB18
+125AB18:lI116|H125AB38
+125AB38:lI47|H125AB58
+125AB58:lI108|H125AB78
+125AB78:lI111|H125AB98
+125AB98:lI99|H125ABB8
+125ABB8:lI97|H125ABD8
+125ABD8:lI108|H125ABF8
+125ABF8:lI47|H125AC18
+125AC18:lI108|H125AC38
+125AC38:lI105|H125AC58
+125AC58:lI98|H125AC78
+125AC78:lI47|H125AC98
+125AC98:lI101|H125ACB8
+125ACB8:lI114|H125ACD8
+125ACD8:lI108|H125ACF8
+125ACF8:lI97|H125AD18
+125AD18:lI110|H125AD38
+125AD38:lI103|H125AD58
+125AD58:lI47|H125AD78
+125AD78:lI108|H125AD90
+125AD90:lI105|H125ADA8
+125ADA8:lI98|H125ADC0
+125ADC0:lI47|H125ADD8
+125ADD8:lI107|H125ADF0
+125ADF0:lI101|H125AE08
+125AE08:lI114|H125AE20
+125AE20:lI110|H125AE38
+125AE38:lI101|H125AE50
+125AE50:lI108|H125AE68
+125AE68:lI45|H125AE80
+125AE80:lI50|H125AE98
+125AE98:lI46|H125AEB0
+125AEB0:lI49|H125AEC8
+125AEC8:lI51|H125AEE0
+125AEE0:lI46|H125AEF8
+125AEF8:lI53|H125AF10
+125AF10:lI47|H125AF28
+125AF28:lI101|H125AF40
+125AF40:lI98|H125AF58
+125AF58:lI105|H125AF70
+125AF70:lI110|N
+125AAC0:lH125AAE0|N
+125AAE0:lI47|H125AB00
+125AB00:lI111|H125AB20
+125AB20:lI112|H125AB40
+125AB40:lI116|H125AB60
+125AB60:lI47|H125AB80
+125AB80:lI108|H125ABA0
+125ABA0:lI111|H125ABC0
+125ABC0:lI99|H125ABE0
+125ABE0:lI97|H125AC00
+125AC00:lI108|H125AC20
+125AC20:lI47|H125AC40
+125AC40:lI108|H125AC60
+125AC60:lI105|H125AC80
+125AC80:lI98|H125ACA0
+125ACA0:lI47|H125ACC0
+125ACC0:lI101|H125ACE0
+125ACE0:lI114|H125AD00
+125AD00:lI108|H125AD20
+125AD20:lI97|H125AD40
+125AD40:lI110|H125AD60
+125AD60:lI103|H125AD80
+125AD80:lI47|H125AD98
+125AD98:lI108|H125ADB0
+125ADB0:lI105|H125ADC8
+125ADC8:lI98|H125ADE0
+125ADE0:lI47|H125ADF8
+125ADF8:lI115|H125AE10
+125AE10:lI116|H125AE28
+125AE28:lI100|H125AE40
+125AE40:lI108|H125AE58
+125AE58:lI105|H125AE70
+125AE70:lI98|H125AE88
+125AE88:lI45|H125AEA0
+125AEA0:lI49|H125AEB8
+125AEB8:lI46|H125AED0
+125AED0:lI49|H125AEE8
+125AEE8:lI54|H125AF00
+125AF00:lI46|H125AF18
+125AF18:lI53|H125AF30
+125AF30:lI47|H125AF48
+125AF48:lI101|H125AF60
+125AF60:lI98|H125AF78
+125AF78:lI105|H125AF80
+125AF80:lI110|N
+1214A30:t9:A5:state,A5:efile,N,A4:none,p<0.1>,A8:infinity,A9:undefined,A5:false,H125AA48
+125AA48:t4:AA:prim_state,A5:false,A9:undefined,A9:undefined
 =proc_dictionary:<0.5.0>
-H1290E3C
-H1290E48
+H1249FC4
+H1249FD0
 =proc_stack:<0.5.0>
-0x01287bc8:SReturn addr 0x1173CB8 (proc_lib:init_p_do_apply/3 + 28)
+0x01213edc:SReturn addr 0x1173CB8 (proc_lib:init_p_do_apply/3 + 28)
 y0:A5:false
 y1:N
-y2:H1285914
+y2:H1213528
 y3:AC:error_logger
 y4:P<0.2.0>
-0x01287be0:SReturn addr 0x5EB60C (<terminate process normally>)
+0x01213ef4:SReturn addr 0x5EB60C (<terminate process normally>)
 y0:SCatch 0x1173CC8 (proc_lib:init_p_do_apply/3 + 44)
 =proc_heap:<0.5.0>
-1285914:lH1285848|H1285900
-1285848:t5:A7:handler,AC:error_logger,A5:false,N,A5:false
-1285900:lH12858DC|N
-12858DC:t5:A7:handler,AC:error_logger,A5:false,H12858C0,A5:false
-12858C0:t3:I9,I0,H12858B8
-12858B8:lH1285898|N
-1285898:t2:H128588C,H1285388
-1285388:t3:AC:error_report,P<0.33.0>,H12853A0
-12853A0:t3:P<0.51.0>,AC:crash_report,H12853D0
-12853D0:lH12853F0|H12853F8
-12853F0:lH1285400|H128540C
-1285400:t2:AC:initial_call,H1285414
-1285414:t3:AB:yaws_server,AC:load_and_run,H1285438
-1285438:lAB:Argument__1|H1285454
-1285454:lAB:Argument__2|N
-128540C:lH1285424|H1285430
-1285424:t2:A3:pid,P<0.51.0>
-1285430:lH1285440|H128544C
-1285440:t2:AF:registered_name,N
-128544C:lH128545C|H1285468
-128545C:t2:AA:error_info,H1285470
-1285470:t3:A4:exit,H1285494,H12854A0
-12854A0:lH12854DC|H12854EC
-12854DC:t3:AA:gen_server,A4:call,I3
-12854EC:lH1285520|H1285530
-1285520:t3:AB:application,A4:load,I2
-1285530:lH1285564|H1285574
-1285564:t3:AB:application,A5:start,I2
-1285574:lH12855AC|H12855BC
-12855AC:t3:A4:echo,A5:start,I0
-12855BC:lH12855E0|N
-12855E0:t3:A8:proc_lib,AF:init_p_do_apply,I3
-1285494:t2:H12854C4,H12854CC
-12854CC:t3:AA:gen_server,A4:call,H1285518
-1285518:lA16:application_controller|H128555C
-128555C:lH1285598|H12855A4
-1285598:t2:A10:load_application,A5:inets
-12855A4:lA8:infinity|N
-12854C4:lI123|H1285510
-1285510:lI97|H1285554
-1285554:lI112|H1285590
-1285590:lI112|H12855D8
-12855D8:lI108|H1285604
-1285604:lI105|H1285620
-1285620:lI99|H1285634
-1285634:lI97|H128563C
-128563C:lI116|H1285644
-1285644:lI105|H128564C
-128564C:lI111|H1285654
-1285654:lI110|H128565C
-128565C:lI95|H1285664
-1285664:lI115|H128566C
-128566C:lI116|H1285674
-1285674:lI97|H128567C
-128567C:lI114|H1285684
-1285684:lI116|H128568C
-128568C:lI95|H1285694
-1285694:lI102|H128569C
-128569C:lI97|H12856A4
-12856A4:lI105|H12856AC
-12856AC:lI108|H12856B4
-12856B4:lI117|H12856BC
-12856BC:lI114|H12856C4
-12856C4:lI101|H12856CC
-12856CC:lI44|H12856D4
-12856D4:lI121|H12856DC
-12856DC:lI97|H12856E4
-12856E4:lI119|H12856EC
-12856EC:lI115|H12856F4
-12856F4:lI44|H12856FC
-12856FC:lI123|H1285704
-1285704:lI115|H128570C
-128570C:lI104|H1285714
-1285714:lI117|H128571C
-128571C:lI116|H1285724
-1285724:lI100|H128572C
-128572C:lI111|H1285734
-1285734:lI119|H128573C
-128573C:lI110|H1285744
-1285744:lI44|H128574C
-128574C:lI123|H1285754
-1285754:lI121|H128575C
-128575C:lI97|H1285764
-1285764:lI119|H128576C
-128576C:lI115|H1285774
-1285774:lI95|H128577C
-128577C:lI97|H1285784
-1285784:lI112|H128578C
-128578C:lI112|H1285794
-1285794:lI44|H128579C
-128579C:lI115|H12857A4
-12857A4:lI116|H12857AC
-12857AC:lI97|H12857B4
-12857B4:lI114|H12857BC
-12857BC:lI116|H12857C4
-12857C4:lI44|H12857CC
-12857CC:lI91|H12857D4
-12857D4:lI110|H12857DC
-12857DC:lI111|H12857E4
-12857E4:lI114|H12857EC
-12857EC:lI109|H12857F4
-12857F4:lI97|H12857FC
-12857FC:lI108|H1285804
-1285804:lI44|H128580C
-128580C:lI91|H1285814
-1285814:lI93|H128581C
-128581C:lI93|H1285824
-1285824:lI125|H128582C
-128582C:lI125|H1285834
-1285834:lI125|N
-1285468:lH1285480|H128548C
-1285480:t2:A9:ancestors,H12854A8
-12854A8:lAB:yaws_server|H12854F4
-12854F4:lA8:yaws_sup|H1285538
-1285538:lP<0.34.0>|N
-128548C:lH12854B0|H12854BC
-12854B0:t2:A8:messages,N
-12854BC:lH12854FC|H1285508
-12854FC:t2:A5:links,N
-1285508:lH1285540|H128554C
-1285540:t2:AA:dictionary,N
-128554C:lH128557C|H1285588
-128557C:t2:A9:trap_exit,A5:false
-1285588:lH12855C4|H12855D0
-12855C4:t2:A6:status,A7:running
-12855D0:lH12855F0|H12855FC
-12855F0:t2:A9:heap_size,I610
-12855FC:lH128560C|H1285618
-128560C:t2:AA:stack_size,I24
-1285618:lH1285628|N
-1285628:t2:AA:reductions,I130
-12853F8:lN|N
-128588C:t2:H128586C,H128587C
-128587C:t3:I16,I20,I15
-128586C:t3:I2010,I4,I20
-1290E3C:t2:AD:$initial_call,H11762B4
+1213528:lH121345C|H1213514
+121345C:t5:A7:handler,AC:error_logger,A5:false,N,A5:false
+1213514:lH12134F0|N
+12134F0:t5:A7:handler,AC:error_logger,A5:false,H12134D4,A5:false
+12134D4:t3:I9,I0,H12134CC
+12134CC:lH12134AC|N
+12134AC:t2:H12134A0,H1212FDC
+1212FDC:t3:AC:error_report,P<0.33.0>,H1212FEC
+1212FEC:t3:P<0.51.0>,AC:crash_report,H1212FFC
+1212FFC:lH1213004|H1213448
+1213004:lH121306C|H121300C
+121306C:t2:AC:initial_call,H1213108
+1213108:t3:AB:yaws_server,AC:load_and_run,H1213428
+1213428:lAB:Argument__1|H1213420
+1213420:lAB:Argument__2|N
+121300C:lH1213078|H1213014
+1213078:t2:A3:pid,P<0.51.0>
+1213014:lH1213084|H121301C
+1213084:t2:AF:registered_name,N
+121301C:lH1213090|H1213024
+1213090:t2:AA:error_info,H1213118
+1213118:t3:A4:exit,H1213128,H1213134
+1213134:lH121316C|H121313C
+121316C:t3:AA:gen_server,A4:call,I3
+121313C:lH121317C|H1213144
+121317C:t3:AB:application,A4:load,I2
+1213144:lH121318C|H121314C
+121318C:t3:AB:application,A5:start,I2
+121314C:lH121319C|H1213154
+121319C:t3:A9:hallplats,A5:start,I0
+1213154:lH12131AC|N
+12131AC:t3:A8:proc_lib,AF:init_p_do_apply,I3
+1213128:t2:H1213418,H121315C
+121315C:t3:AA:gen_server,A4:call,H12131D8
+12131D8:lA16:application_controller|H12131BC
+12131BC:lH12131C4|H12131D0
+12131C4:t2:A10:load_application,A5:inets
+12131D0:lA8:infinity|N
+1213418:lI123|H1213410
+1213410:lI97|H1213408
+1213408:lI112|H1213400
+1213400:lI112|H12133F8
+12133F8:lI108|H12133F0
+12133F0:lI105|H12133E8
+12133E8:lI99|H12133E0
+12133E0:lI97|H12133D8
+12133D8:lI116|H12133D0
+12133D0:lI105|H12133C8
+12133C8:lI111|H12133C0
+12133C0:lI110|H12133B8
+12133B8:lI95|H12133B0
+12133B0:lI115|H12133A8
+12133A8:lI116|H12133A0
+12133A0:lI97|H1213398
+1213398:lI114|H1213390
+1213390:lI116|H1213388
+1213388:lI95|H1213380
+1213380:lI102|H1213378
+1213378:lI97|H1213370
+1213370:lI105|H1213368
+1213368:lI108|H1213360
+1213360:lI117|H1213358
+1213358:lI114|H1213350
+1213350:lI101|H1213348
+1213348:lI44|H1213340
+1213340:lI121|H1213338
+1213338:lI97|H1213330
+1213330:lI119|H1213328
+1213328:lI115|H1213320
+1213320:lI44|H1213318
+1213318:lI123|H1213310
+1213310:lI115|H1213308
+1213308:lI104|H1213300
+1213300:lI117|H12132F8
+12132F8:lI116|H12132F0
+12132F0:lI100|H12132E8
+12132E8:lI111|H12132E0
+12132E0:lI119|H12132D8
+12132D8:lI110|H12132D0
+12132D0:lI44|H12132C8
+12132C8:lI123|H12132C0
+12132C0:lI121|H12132B8
+12132B8:lI97|H12132B0
+12132B0:lI119|H12132A8
+12132A8:lI115|H12132A0
+12132A0:lI95|H1213298
+1213298:lI97|H1213290
+1213290:lI112|H1213288
+1213288:lI112|H1213280
+1213280:lI44|H1213278
+1213278:lI115|H1213270
+1213270:lI116|H1213268
+1213268:lI97|H1213260
+1213260:lI114|H1213258
+1213258:lI116|H1213250
+1213250:lI44|H1213248
+1213248:lI91|H1213240
+1213240:lI110|H1213238
+1213238:lI111|H1213230
+1213230:lI114|H1213228
+1213228:lI109|H1213220
+1213220:lI97|H1213218
+1213218:lI108|H1213210
+1213210:lI44|H1213208
+1213208:lI91|H1213200
+1213200:lI93|H12131F8
+12131F8:lI93|H12131F0
+12131F0:lI125|H12131E8
+12131E8:lI125|H12131E0
+12131E0:lI125|N
+1213024:lH121309C|H121302C
+121309C:t2:A9:ancestors,H1213440
+1213440:lAB:yaws_server|H1213438
+1213438:lA8:yaws_sup|H1213430
+1213430:lP<0.34.0>|N
+121302C:lH12130A8|H1213034
+12130A8:t2:A8:messages,N
+1213034:lH12130B4|H121303C
+12130B4:t2:A5:links,N
+121303C:lH12130C0|H1213044
+12130C0:t2:AA:dictionary,N
+1213044:lH12130CC|H121304C
+12130CC:t2:A9:trap_exit,A5:false
+121304C:lH12130D8|H1213054
+12130D8:t2:A6:status,A7:running
+1213054:lH12130E4|H121305C
+12130E4:t2:A9:heap_size,I610
+121305C:lH12130F0|H1213064
+12130F0:t2:AA:stack_size,I24
+1213064:lH12130FC|N
+12130FC:t2:AA:reductions,I130
+1213448:lN|N
+12134A0:t2:H1213480,H1213490
+1213490:t3:I11,I29,I25
+1213480:t3:I2010,I5,I18
+1249FC4:t2:AD:$initial_call,H11762B4
 11762B4:t3:A9:gen_event,A7:init_it,I6
-1290E48:t2:AA:$ancestors,H1290E74
-1290E74:lP<0.2.0>|N
+1249FD0:t2:AA:$ancestors,H1249FFC
+1249FFC:lP<0.2.0>|N
 =proc_messages:<0.42.0>
-H1214804:N
+H1228994:N
 =proc_stack:<0.42.0>
-0x01214b14:SReturn addr 0x5EB60C (<terminate process normally>)
+0x01228ca4:SReturn addr 0x5EB60C (<terminate process normally>)
 y0:A5:secs3
 y1:P<0.36.0>
 y2:I3000
 =proc_heap:<0.42.0>
-1214804:t3:A4:EXIT,P<0.36.0>,A8:shutdown
+1228994:t3:A4:EXIT,P<0.36.0>,A8:shutdown
 =proc_messages:<0.43.0>
-H1215CA4:N
+H121633C:N
 =proc_stack:<0.43.0>
-0x01215fb4:SReturn addr 0x5EB60C (<terminate process normally>)
+0x0121664c:SReturn addr 0x5EB60C (<terminate process normally>)
 y0:A8:minute10
 y1:P<0.36.0>
 y2:I600000
 =proc_heap:<0.43.0>
-1215CA4:t3:A4:EXIT,P<0.36.0>,A8:shutdown
+121633C:t3:A4:EXIT,P<0.36.0>,A8:shutdown
 =atoms
 httpd
 httpc
@@ -5965,17 +5965,19 @@ stop_service
 stand_alone
 '-start/0-fun-0-'
 '-start_driver/0-fun-0-'
-'-test/1-fun-0-'
+'-get/1-fun-0-'
 '-fetch_forecasts/2-fun-0-'
 '-fetch_forecasts/2-lc$^0/1-0-'
-'-fetch_forecast/2-lc$^0/1-0-'
 fetch_forecast
 wait_for_forecasts
 fetch_forecasts
 forecast
-test
+fetch_nearby_stops
+lng
+lat
 driver_call
 transmit
+sqlquery
 restart_driver
 ruby_driver
 ruby_port
@@ -6229,6 +6231,7 @@ do_wildcard
 file_size
 is_regular
 badpattern
+hallplats
 '-print/6-fun-0-'
 '-print/6-fun-1-'
 indent

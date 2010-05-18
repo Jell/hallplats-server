@@ -1,0 +1,33 @@
+<erl>
+	out(Arg) ->
+		LatStr =
+			case queryvar(Arg,"lat") of
+				{ok, LatTmp} ->
+					LatTmp;
+				_ ->
+					undefined
+			end,
+		LngStr =
+			case queryvar(Arg,"lng") of
+				{ok, LngTmp} ->
+					LngTmp;
+				_ ->
+					undefined
+			end,
+			
+		Result = case {LatStr, LngStr} of
+			{undefined, undefined} ->
+				io_lib:format("<html><h1>You Forgot parameters lat and lng!</h1></html>", []);
+			{_ , undefined}->
+				io_lib:format("<html><h1>You Forgot parameter lng!</h1></html>", []);
+			{undefined, _} ->
+				io_lib:format("<html><h1>You Forgot parameter lat!</h1></html>", []);
+			{_,_} ->
+				{Lat, []} = string:to_float(LatStr),
+				{Lng, []} = string:to_float(LngStr),
+				hallplats:get([{lat, Lat}, {lng, Lng}])	
+		end,
+
+		%{content, "application/json", Result}.
+		{content, "text/html", Result}.
+</erl>
