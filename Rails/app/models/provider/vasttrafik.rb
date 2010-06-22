@@ -47,8 +47,8 @@ module Provider::Vasttrafik
     xml_tree.css("forecast item").each do |element|
       attributes = {}
       attributes[:line_number]          = element.attribute("line_number").text.to_s
-      attributes[:color]                = element.attribute("line_number_foreground_color").text.to_s
-      attributes[:background_color]     = element.attribute("line_number_background_color").text.to_s
+      attributes[:color]                = element.attribute("line_number_foreground_color").text
+      attributes[:background_color]     = element.attribute("line_number_background_color").text
       attributes[:destination]          = element.css("destination").text.to_s
       
       attributes[:next_trip]            = element.attribute("next_trip").text.to_s

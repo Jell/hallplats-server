@@ -34,11 +34,21 @@ get(Url) ->
 					Data = DataTmp;
 				false ->
 					Data = get_over_http(Url, 3),
-					spawn(fun() -> write_mnesia(Url, Data) end)
+					case Data of
+						<<"<root><forecast><items /></forecast></root>">> ->
+							dontsave;
+						_	->
+							spawn(fun() -> write_mnesia(Url, Data) end)
+					end
 			end;
 		_ ->
 			Data = get_over_http(Url, 3),
-			spawn(fun() -> write_mnesia(Url, Data) end)
+			case Data of
+				<<"<root><forecast><items /></forecast></root>">> ->
+					dontsave;
+				_	->
+					spawn(fun() -> write_mnesia(Url, Data) end)
+			end
 	end,
 	Data.
 
@@ -68,7 +78,9 @@ get_over_http(Url, Retries) ->
 		3000 ->
 			if
 				Retries > 1 ->
-					get_over_http(Url, Retries - 1)
+					get_over_http(Url, Retries - 1);
+				true ->
+					<<"<root><forecast><items /></forecast></root>">>
 			end
 	end.
 

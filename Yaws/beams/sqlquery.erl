@@ -3,11 +3,11 @@
 
 start() ->
 	% sqlite:start_link(development),
-	sqlite:start_link(development, [{db, "../Rails/db/development.sqlite3"}]),
+	sqlite:start_link(development, [{db, "/var/hallplats/Rails/db/development.sqlite3"}]),
 	sqlite:list_tables().
 	
 fetch_nearby_stops(Lat, Lng) ->
-	Area = 0.002,
+	Area = 0.001,
 	Ratio = distance_geodesic(Lat, Lng, Lat, Lng + 0.1) / distance_geodesic(Lat, Lng, Lat + 0.1, Lng),
 	Query = io_lib:format("SELECT * FROM bus_stops WHERE lat > ~p AND lat < ~p AND lng > ~p AND lng < ~p LIMIT 50",
 													[Lat - Ratio*Area, Lat + Ratio*Area, Lng - Area,Lng + Area]),
@@ -33,7 +33,7 @@ sort_result(Result, Lat, Lng) ->
 					{B1, []} = string:to_float(Lng1),
 					{A2, []} = string:to_float(Lat2),
 					{B2, []} = string:to_float(Lng2),
-					distance_geodesic(Lat, Lng, A1, B1) =< distance_geodesic(Lat, Lng, A2, B2)
+					distance_geodesic(Lat, Lng, A1, B1) < distance_geodesic(Lat, Lng, A2, B2)
 				end, Result).
 
 distance_geodesic(Lat1, Long1, Lat2, Long2) ->
@@ -45,7 +45,7 @@ distance_geodesic(Lat1, Long1, Lat2, Long2) ->
 	  R * math:acos(math:cos(A1)*math:cos(B1)*math:cos(A2)*math:cos(B2) + math:cos(A1)*math:sin(B1)*math:cos(A2)*math:sin(B2) + math:sin(A1)*math:sin(A2)).
 
 find_10_closer(OldList, Area, Ratio, Lat, Lng) ->
-	Query = io_lib:format("SELECT * FROM bus_stops WHERE lat > ~p AND lat < ~p AND lng > ~p AND lng < ~p AND NOT (lat > ~p AND lat < ~p AND lng > ~p AND lng < ~p) LIMIT 50",
+	Query = io_lib:format("SELECT * FROM bus_stops WHERE lat > ~p AND lat < ~p AND lng > ~p AND lng < ~p AND NOT (lat > ~p AND lat < ~p AND lng > ~p AND lng < ~p) LIMIT 100",
 													[Lat- 2 * Ratio * Area, Lat + 2 * Ratio * Area, Lng - 2 * Area, Lng + 2 * Area,
 													Lat - Ratio * Area, Lat + Ratio * Area, Lng - Area, Lng + Area]),
 	Result = sqlite:sql_exec(Query),
