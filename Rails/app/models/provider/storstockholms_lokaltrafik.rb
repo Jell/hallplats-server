@@ -134,8 +134,7 @@ module Provider::StorstockholmsLokaltrafik
               "27" => "#007CC3",
               "28" => "#007CC3",
               "29" => "#007CC3"}
-              
-              7 == 7 ? 1 : 2
+
     tram_list = {}
     trams.each do |tram|
       line = tram.css("LineNumber").text
