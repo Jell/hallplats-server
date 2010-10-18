@@ -1,5 +1,5 @@
 -module(sqlquery).
--export([start/0, fetch_nearby_stops/2, distance_geodesic/4]).
+-export([start/0, fetch_nearby_stops/2, distance_geodesic/4, exec_sql_query/1]).
 
 start() ->
 	% sqlite:start_link(development),
@@ -11,7 +11,7 @@ fetch_nearby_stops(Lat, Lng) ->
 	Ratio = distance_geodesic(Lat, Lng, Lat, Lng + 0.1) / distance_geodesic(Lat, Lng, Lat + 0.1, Lng),
 	Query = io_lib:format("SELECT * FROM bus_stops WHERE lat > ~p AND lat < ~p AND lng > ~p AND lng < ~p LIMIT 50",
 													[Lat - Ratio*Area, Lat + Ratio*Area, Lng - Area,Lng + Area]),
-	case sqlite:sql_exec(Query) of
+	case exec_sql_query(Query) of
 		ok ->
 			Result = find_10_closer([], Area * 2, Ratio, Lat, Lng);
 		List ->
@@ -48,7 +48,7 @@ find_10_closer(OldList, Area, Ratio, Lat, Lng) ->
 	Query = io_lib:format("SELECT * FROM bus_stops WHERE lat > ~p AND lat < ~p AND lng > ~p AND lng < ~p AND NOT (lat > ~p AND lat < ~p AND lng > ~p AND lng < ~p) LIMIT 100",
 													[Lat- 2 * Ratio * Area, Lat + 2 * Ratio * Area, Lng - 2 * Area, Lng + 2 * Area,
 													Lat - Ratio * Area, Lat + Ratio * Area, Lng - Area, Lng + Area]),
-	Result = sqlite:sql_exec(Query),
+	Result = exec_sql_query(Query),
 	case Result of
 		ok ->
 			find_10_closer(OldList, Area * 2, Ratio, Lat, Lng);
@@ -60,4 +60,13 @@ find_10_closer(OldList, Area, Ratio, Lat, Lng) ->
 				true ->
 					find_10_closer(NewList, Area * 2, Ratio, Lat, Lng)
 			end	
+	end.
+
+exec_sql_query(Query) ->
+	try
+		sqlite:sql_exec(Query)
+	catch
+		_ ->
+			start(),
+			exec_sql_query(Query)
 	end.

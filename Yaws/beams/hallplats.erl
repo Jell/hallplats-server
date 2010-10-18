@@ -4,6 +4,7 @@
 start() ->
 	inets:start(),
 	cache_server:start(),
+	sqlquery:start(),
 	spawn(fun() -> start_driver() end).
 
 start_driver() ->
@@ -22,7 +23,6 @@ restart_driver() ->
 	start().
 
 ruby_driver(Port) ->
-	sqlquery:start(),
 	port_connect(Port, self()),
 	link(Port),
 	receive

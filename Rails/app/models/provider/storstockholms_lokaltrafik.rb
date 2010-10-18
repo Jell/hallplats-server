@@ -25,7 +25,7 @@ module Provider::StorstockholmsLokaltrafik
 
   def get_forecast_url(poi_id)
     #url = "http://realtid.sl.se/?epslanguage=SV&WbSgnMdl="+poi_id+"-U3Rv-_-1-_-1-1"
-    url = "http://www1.sl.se/realtidws/RealTimeService.asmx/GetDpsDepartures?siteId=" + poi_id + "&timeWindow=30"
+    url = "http://www1.sl.se/realtidws/RealTimeService.asmx/GetDpsDepartures?siteId=" + poi_id + "&timeWindow=60"
   end
   
   def parse_forecast(response, poi_id, poi_name)

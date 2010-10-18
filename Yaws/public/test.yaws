@@ -1,0 +1,8 @@
+<erl>
+	out(Arg) ->
+	  Query = io_lib:format("SELECT COUNT(id) FROM bus_stops", []),
+	  Result = sqlquery:exec_sql_query(Query),
+
+		%{content, "application/json", Result}.
+		{content, "text/html", io_lib:format("~p~n", [Result])}.
+</erl>

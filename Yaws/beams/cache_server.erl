@@ -5,7 +5,8 @@
 start() ->
 	mnesia:start(),
 	mnesia:create_table(cached_url, [{attributes, record_info(fields, cached_url)}]),
-	spawn(fun() -> cleaner_daemon() end).
+	spawn(fun() -> cleaner_daemon() end),
+	ok.
 
 cleaner_daemon() ->
 	F = fun() ->
