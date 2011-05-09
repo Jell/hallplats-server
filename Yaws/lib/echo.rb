@@ -1,6 +1,8 @@
 # coding: utf-8
 require 'rubygems'
-gem 'activesupport', '3.0.0.beta3'
+gem 'activesupport'
+gem 'erlectricity'
+gem 'nokogiri'
 require 'active_support/inflector'
 require 'active_support/json'
 require 'erlectricity'
