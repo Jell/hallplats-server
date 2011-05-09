@@ -1,8 +1,12 @@
 <erl>
-	out(Arg) ->
-	  Query = io_lib:format("SELECT COUNT(id) FROM bus_stops", []),
-	  Result = sqlquery:exec_sql_query(Query),
-
-		%{content, "application/json", Result}.
-		{content, "text/html", io_lib:format("~p~n", [Result])}.
+  out(Arg) ->
+    Query = io_lib:format("SELECT COUNT(id) FROM bus_stops", []),
+    Result = case sqlquery:exec_sql_query(Query) of
+      [{Value}] -> case list_to_integer(Value) of
+          0 -> <<"FAIL">>;
+          _ -> <<"OK">>
+        end;
+      _ -> <<"FAIL">>
+    end,
+    {content, "text/html", Result}.
 </erl>
